@@ -29,6 +29,10 @@
     <input id="callToId" class="form-control input-sm col-3 d-inline"  type="text" placeholder="Call to id">
     <button class="btn btn-primary" id="btn-call">Call</button>
     <script>
+     navigator.mediaDevices.getUserMedia =
+     navigator.mediaDevices.getUserMedia ||
+     navigator.mediaDevices.webkitGetUserMedia ||
+     navigator.mediaDevices.mozGetUserMedia;
         const onStream = ()=>{
             const config = {audio: false, video: true};
             return navigator.mediaDevices.getUserMedia(config);
